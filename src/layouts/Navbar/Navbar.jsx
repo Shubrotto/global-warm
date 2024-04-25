@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import "./navbar.scss";
 import Logo from "../../assets/web_logo.png";
-import { CiMenuFries } from "react-icons/ci";
+import { RiMenu3Fill } from "react-icons/ri";
+import { useState } from "react";
+import { CgClose } from "react-icons/cg";
 const Navbar = () => {
+  const [toggle, setToggle] = useState(false);
   return (
     <div className="navbar_container">
       <div className="navbar_wrapper">
@@ -12,33 +15,69 @@ const Navbar = () => {
             <span className="logo_title">Plant Trees</span>
           </Link>
         </div>
-        <div className="navbar_right">
-          <ul className="navbar_lists">
-            <li className="navbar_item">
-              <Link to="/" className="navbar_link">
-                Home
-              </Link>
-            </li>
-            <li className="navbar_item">
-              <Link to="/about" className="navbar_link">
-                About
-              </Link>
-            </li>
-            <li className="navbar_item">
-              <Link to="/feature" className="navbar_link">
-                Feature
-              </Link>
-            </li>
-            <li className="navbar_item">
-              <Link to="/contact" className="navbar_link">
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* <CiMenuFries className="hamburger_icon" /> */}
+        {toggle ? (
+          <div className="navbar_right" style={{ display: "none" }}>
+            <ul className="navbar_lists">
+              <li className="navbar_item">
+                <Link to="/" className="navbar_link">
+                  Home
+                </Link>
+              </li>
+              <li className="navbar_item">
+                <Link to="/about" className="navbar_link">
+                  About
+                </Link>
+              </li>
+              <li className="navbar_item">
+                <Link to="/feature" className="navbar_link">
+                  Feature
+                </Link>
+              </li>
+              <li className="navbar_item">
+                <Link to="/contact" className="navbar_link">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <div className="navbar_right" style={{ display: "flex" }}>
+            <ul className="navbar_lists">
+              <li className="navbar_item">
+                <Link to="/" className="navbar_link">
+                  Home
+                </Link>
+              </li>
+              <li className="navbar_item">
+                <Link to="/about" className="navbar_link">
+                  About
+                </Link>
+              </li>
+              <li className="navbar_item">
+                <Link to="/feature" className="navbar_link">
+                  Feature
+                </Link>
+              </li>
+              <li className="navbar_item">
+                <Link to="/contact" className="navbar_link">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
+      {toggle ? (
+        <RiMenu3Fill
+          className="hamburger_icon"
+          onClick={() => setToggle(!toggle)}
+        />
+      ) : (
+        <CgClose
+          className="hamburger_icon"
+          onClick={() => setToggle(!toggle)}
+        />
+      )}
     </div>
   );
 };

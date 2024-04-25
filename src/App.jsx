@@ -6,11 +6,11 @@ import NotFound from "./pages/NotFound";
 function App() {
   return (
     <BrowserRouter>
+      {" "}
+      {/* basename={`/global-warm`} */}
       <Routes>
-        <Route>
-          <Route path="/" element={<Home />} />
-          <Route path="/*" element={<NotFound />} />
-        </Route>
+        <Route exact path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
