@@ -1,0 +1,28 @@
+.social_icons {
+  display: flex;
+  flex-direction: column;
+  //   position: relative;
+  bottom: 200px;
+  gap: 10px;
+  // position: absolute;
+  // left: -80px;
+
+  span {
+    color: white;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 5px;
+    // position: absolute;
+    // left: -80px;
+    cursor: pointer;
+
+    .icons {
+      font-size: 20px;
+      margin-left: 5px;
+    }
+  }
+}
