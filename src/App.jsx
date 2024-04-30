@@ -12,8 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      {/* basename={`/global-warm`} */}
-      <Routes>
+      <Routes basename={`/global-warm`}>
         <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/feature" element={<Feature />} />
