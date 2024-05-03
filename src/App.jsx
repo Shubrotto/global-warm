@@ -11,8 +11,9 @@ import Feature from "./component/Feature/Feature";
 function App() {
   return (
     <BrowserRouter>
+      {/* basename={`/global-warm`} */}
       <Navbar />
-      <Routes basename={`/global-warm`}>
+      <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/feature" element={<Feature />} />
